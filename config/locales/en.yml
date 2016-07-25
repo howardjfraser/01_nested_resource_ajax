@@ -24,3 +24,8 @@ en:
     messages:
       blank: "can’t be blank"
       confirmation: "%{attribute}s don’t match"
+
+  activerecord:
+    attributes:
+      message:
+        body: "Message"

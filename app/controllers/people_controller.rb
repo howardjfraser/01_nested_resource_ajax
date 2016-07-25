@@ -5,6 +5,7 @@ class PeopleController < ApplicationController
 
   def show
     load_person
+    @message = @person.messages.build
   end
 
   def new

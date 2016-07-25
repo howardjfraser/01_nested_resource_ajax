@@ -2,9 +2,9 @@ require 'test_helper'
 
 class PeopleIntegrationTest < ActionDispatch::IntegrationTest
   test 'add person' do
-    new_name = 'John Doe'
-    new_job_title = 'Plumber'
-    new_bio = 'Tales of plumbing...'
+    new_name = sample_string
+    new_job_title = sample_string
+    new_bio = sample_string
 
     visit '/people'
     page.has_content? 'People'
@@ -23,12 +23,12 @@ class PeopleIntegrationTest < ActionDispatch::IntegrationTest
   end
 
   test 'edit person' do
-    new_name = 'Jane Doe'
-    new_job_title = 'Carpenter'
-    new_bio = 'Tales of carpenting...'
+    new_name = sample_string
+    new_job_title = sample_string
+    new_bio = sample_string
 
     visit '/people'
-    first('li').click_link('view')
+    first('span').click_link('view')
     page.has_content? 'People / '
     click_on 'Edit'
     fill_in('Name', with: new_name)

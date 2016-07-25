@@ -24,22 +24,17 @@
     <hr class="hidden-sm-up m-y-2">
     <h5>Messages</h5>
 
-    <textarea name="name" rows="3" placeholder="Leave a message for <%= @person.first_name %>&hellip;"></textarea>
-    <button type="button" name="button" class="btn-block m-b-2">Post</button>
+    <%= form_for [@person, @message] do |f| %>
 
-    <div class="message m-b-1">
-      <div class="p-b-q">
-        This is a message left by a friend.
-      </div>
-      <div class="text-muted small ">Created 2 minutes ago</div>
-    </div>
+      <%= empty_or_error f, @message, :body %>
+      <%= f.text_area :body, rows: 2, placeholder: "Leave a message for #{@person.first_name}&hellip;".html_safe %>
 
-    <div class="message m-b-1">
-      <div class="p-b-q">
-        And this is another one, left by someone else.
-      </div>
-      <div class="text-muted small ">Created 22 minutes ago</div>
-    </div>
+      <%= f.button "Post", class: 'btn-block m-b-2' %>
+    <% end %>
+
+    <%= render @person.messages.most_recent %>
+
+    <!-- if there are more than 3 messages link to view all -->
 
   </div>
 

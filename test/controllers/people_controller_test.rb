@@ -25,7 +25,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
 
   test 'valid create' do
     assert_difference 'Person.count', 1 do
-      post people_path, params: { person: { name: str, job_title: str } }
+      post people_path, params: { person: { name: sample_string, job_title: sample_string } }
     end
     assert_response :redirect
     follow_redirect!
@@ -48,7 +48,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'valid update' do
-    patch person_path @person, params: { person: { name: str } }
+    patch person_path @person, params: { person: { name: sample_string } }
     assert_response :redirect
     follow_redirect!
     assert_select 'h1', "People / #{@person.reload.name}"

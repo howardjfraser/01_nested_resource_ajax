@@ -14,8 +14,8 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 
-  def str
-    ('a'..'z').to_a.sample(12).join
+  def sample_string(length = 12)
+    ('a'..'z').to_a.sample(length).join
   end
 end
 

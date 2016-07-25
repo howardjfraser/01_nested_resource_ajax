@@ -44,4 +44,18 @@ class PersonTest < ActiveSupport::TestCase
     @person.name = 'Keith'
     assert @person.first_name == 'Keith'
   end
+
+  test 'dependent destroy of messages' do
+    message_count = @person.messages.count
+    assert message_count > 0
+
+    assert_difference 'Message.count', -message_count do
+      @person.destroy
+    end
+  end
+
+  test 'default sort order' do
+    messages = people(:david).messages
+    assert messages.first == messages(:david_three)
+  end
 end

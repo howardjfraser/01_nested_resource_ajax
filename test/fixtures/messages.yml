@@ -1,0 +1,14 @@
+david_one:
+  body: <%= FFaker::Lorem.sentence %>
+  person: david
+  created_at: <%= 2.hours.ago %>
+
+david_two:
+  body: <%= FFaker::Lorem.sentence %>
+  person: david
+  created_at: <%= 3.hours.ago %>
+
+david_three:
+  body: <%= FFaker::Lorem.sentence %>
+  person: david
+  created_at: <%= 1.hours.ago %>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'notes/about'
-
   root 'notes#about'
-  resources :people
+  resources :people do
+    resources :messages, only: [:index, :create]
+  end
 end
