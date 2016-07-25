@@ -1,12 +1,12 @@
 class MessagesController < ApplicationController
+  before_action :find_person
+
   # handle manual refresh after validation fail
   def index
-    @person = Person.find(params[:person_id])
     redirect_to @person
   end
 
   def create
-    @person = Person.find(params[:person_id])
     @message = @person.messages.build message_params
     if @message.save
       redirect_to @person
@@ -19,5 +19,9 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:body, :person_id)
+  end
+
+  def find_person
+    @person = Person.find(params[:person_id])
   end
 end
