@@ -30,6 +30,10 @@ strong,
   padding-bottom: 0.5em;
 }
 
+.p-b-q {
+  padding-bottom: 0.25em;
+}
+
 .m-b-h {
   margin-bottom: 0.5em;
 }
@@ -52,7 +56,7 @@ textarea {
 .btn {
   font-weight: 500;
   letter-spacing: 0.05em;
-  min-width: 6em;
+  // min-width: 6em;
 }
 
 .btn-secondary {
@@ -61,7 +65,7 @@ textarea {
 }
 
 .btn-block {
-  max-width: 18em;
+  // max-width: 18em;
 }
 
 button {
@@ -124,5 +128,11 @@ footer {
   }
   a:hover {
     color: darken(#fff, 2%)
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .main-col {
+    border-right: 3px solid #eee;
   }
 }

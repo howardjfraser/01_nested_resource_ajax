@@ -1,17 +1,48 @@
 <% provide :nav, "#{link_to 'People', people_path} <span class='text-muted'>/</span>".html_safe %>
 <% provide :title, @person.name %>
 
-<h6>Job Title</h6>
-<p>
-  <%= @person.job_title %>
-</p>
+<div class="row">
 
-<h6>Bio</h6>
-<p class="m-b-2">
-  <%= "#{@person.bio}" %>
-</p>
+  <div class="main-col col-sm-8 m-b-2 ">
+    <h5>Job Title</h5>
+    <p>
+      <%= @person.job_title %>
+    </p>
 
-<%= link_to 'Edit', edit_person_path(@person), class: 'btn btn-success' %>
+    <h5>Bio</h5>
+    <p class="m-b-2">
+      <%= "#{@person.bio}" %>
+    </p>
 
-<%= link_to 'Delete', @person, method: :delete, data:
-  { confirm: "Are you sure you want to delete #{@person.name}?" }, class: 'btn btn-secondary' %>
+    <%= link_to 'Edit', edit_person_path(@person), class: 'btn btn-success' %>
+
+    <%= link_to 'Delete', @person, method: :delete, data:
+      { confirm: "Are you sure you want to delete #{@person.name}?" }, class: 'btn btn-secondary' %>
+  </div>
+
+  <div class="col-sm-4 m-b-2">
+    <hr class="hidden-sm-up m-y-2">
+    <h5>Messages</h5>
+
+    <textarea name="name" rows="3" placeholder="Leave a message for <%= @person.first_name %>&hellip;"></textarea>
+    <button type="button" name="button" class="btn-block m-b-2">Post</button>
+
+    <div class="message m-b-1">
+      <div class="p-b-q">
+        This is a message left by a friend.
+      </div>
+      <div class="text-muted small ">Created 2 minutes ago</div>
+    </div>
+
+    <div class="message m-b-1">
+      <div class="p-b-q">
+        And this is another one, left by someone else.
+      </div>
+      <div class="text-muted small ">Created 22 minutes ago</div>
+    </div>
+
+  </div>
+
+
+
+</div>
