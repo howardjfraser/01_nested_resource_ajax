@@ -56,16 +56,11 @@ textarea {
 .btn {
   font-weight: 500;
   letter-spacing: 0.05em;
-  // min-width: 6em;
 }
 
 .btn-secondary {
   // color, background, border
   @include button-variant(darken($brand-success, 10%), lighten(#98FB98, 30%), lighten($brand-success, 10%))
-}
-
-.btn-block {
-  // max-width: 18em;
 }
 
 button {
