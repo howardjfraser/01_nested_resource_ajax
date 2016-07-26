@@ -8,11 +8,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = @person.messages.build message_params
-    if @message.save
-      redirect_to @person
-    else
-      render 'people/show'
-    end
+    save_message || render('people/show')
   end
 
   private
@@ -23,5 +19,9 @@ class MessagesController < ApplicationController
 
   def find_person
     @person = Person.find(params[:person_id])
+  end
+
+  def save_message
+    redirect_to @person if @message.save
   end
 end
