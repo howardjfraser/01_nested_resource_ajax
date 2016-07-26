@@ -1,5 +1,4 @@
 <% provide :nav, 'Derailed 00' %>
-<% provide :button, link_to('View', people_path, class: 'btn btn-success pull-xs-right') %>
 <% provide :title, 'Foundation' %>
 
 <p>
@@ -20,6 +19,12 @@
 <p>
   A full description can be found <a href="">here</a>.
 </p>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+    <%= link_to("View".html_safe, people_path, class: 'btn btn-info btn-block') %>
+  </div>
+</div>
 
 <p class='text-muted m-t-2'>
     Like all Derailed examples, you can see this app running on

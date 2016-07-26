@@ -28,7 +28,7 @@ class PeopleIntegrationTest < ActionDispatch::IntegrationTest
     new_bio = sample_string
 
     visit '/people'
-    first('span').click_link('view')
+    first('div.people span').click_link('view')
     page.has_content? 'People / '
     click_on 'Edit'
     fill_in('Name', with: new_name)
