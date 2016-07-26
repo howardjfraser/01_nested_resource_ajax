@@ -14,13 +14,13 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
   test 'get show' do
     get person_path @person
     assert_response :success
-    assert_select 'h1', "People / #{@person.name}"
+    assert_select 'h1', @person.name
   end
 
   test 'get new' do
     get new_person_path
     assert_response :success
-    assert_select 'h1', 'People / New'
+    assert_select 'h1', 'New'
   end
 
   test 'valid create' do
@@ -29,7 +29,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :redirect
     follow_redirect!
-    assert_select 'h1', "People / #{Person.last.name}"
+    assert_select 'h1', Person.last.name
     assert_select '.flash', "#{Person.last.name} has been created"
   end
 
@@ -38,27 +38,27 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
       post people_path, params: { person: { name: '' } }
     end
     assert_response :success
-    assert_select 'h1', 'People / New'
+    assert_select 'h1', 'New'
   end
 
   test 'get edit' do
     get edit_person_path @person
     assert_response :success
-    assert_select 'h1', 'People / Edit'
+    assert_select 'h1', 'Edit'
   end
 
   test 'valid update' do
     patch person_path @person, params: { person: { name: sample_string } }
     assert_response :redirect
     follow_redirect!
-    assert_select 'h1', "People / #{@person.reload.name}"
+    assert_select 'h1', @person.reload.name
     assert_select '.flash', "#{@person.name} has been updated"
   end
 
   test 'invalid update' do
     patch person_path @person, params: { person: { name: '' } }
     assert_response :success
-    assert_select 'h1', 'People / Edit'
+    assert_select 'h1', 'Edit'
   end
 
   test 'destroy' do

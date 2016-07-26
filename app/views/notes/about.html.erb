@@ -1,4 +1,6 @@
-<% provide :title, 'About' %>
+<% provide :nav, 'Derailed 00' %>
+<% provide :button, link_to('View', people_path, class: 'btn btn-success pull-xs-right') %>
+<% provide :title, 'Foundation' %>
 
 <p>
   Derailed 01 is an example of a <em>nested resource</em>.
@@ -18,9 +20,6 @@
 <p>
   A full description can be found <a href="">here</a>.
 </p>
-
-
-<%= link_to "View the Example".html_safe, people_path, class: 'btn btn-primary btn-block m-y-2 m-x-auto' %>
 
 <p class='text-muted m-t-2'>
     Like all Derailed examples, you can see this app running on

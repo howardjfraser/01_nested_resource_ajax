@@ -1,5 +1,5 @@
-<% provide :nav, "#{link_to 'People', people_path} <span class='text-muted'>/</span>".html_safe %>
 <% provide :title, @person.name %>
+<%= render partial: 'people/people_nav' %>
 
 <div class="row">
 
@@ -37,7 +37,5 @@
     <!-- if there are more than 3 messages link to view all -->
 
   </div>
-
-
 
 </div>
