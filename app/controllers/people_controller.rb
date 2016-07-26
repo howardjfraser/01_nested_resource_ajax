@@ -1,64 +1,45 @@
 class PeopleController < ApplicationController
   def index
-    load_people
+    @people = Person.all.sorted
   end
 
   def show
-    load_person
+    @person = Person.find(params[:id])
     @message = @person.messages.build
   end
 
   def new
-    build_person
+    @person = Person.new
   end
 
   def create
-    build_person
+    @person = Person.new person_params
     save_person('created') || render('new')
   end
 
   def edit
-    load_person
-    build_person
+    @person = Person.find(params[:id])
   end
 
   def update
-    load_person
-    build_person
+    @person = Person.find(params[:id])
+    @person.update person_params
     save_person('updated') || render('edit')
   end
 
   def destroy
-    load_person
+    @person = Person.find(params[:id])
     @person.destroy
     redirect_to people_path, notice: "#{@person.name} has been deleted"
   end
 
   private
 
-  def load_people
-    @people ||= people
-  end
-
-  def load_person
-    @person ||= people.find(params[:id])
-  end
-
-  def build_person
-    @person ||= people.build
-    @person.attributes = person_params
+  def person_params
+    params.require(:person).permit(:name, :job_title, :bio)
   end
 
   def save_person(action)
     redirect_to @person, notice: "#{@person.name} has been #{action}" if @person.save
-  end
-
-  def people
-    Person.all.sorted
-  end
-
-  def person_params
-    person_params = params[:person]
-    person_params ? person_params.permit(:name, :job_title, :bio) : {}
   end
 end
