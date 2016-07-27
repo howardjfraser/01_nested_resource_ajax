@@ -5,7 +5,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     @person = people(:david)
   end
 
-  test 'manual refresh validation fail redirects to people/show' do
+  test 'manual refresh after validation fail redirects to people/show' do
     get person_messages_path @person
     assert_response :redirect
     follow_redirect!
