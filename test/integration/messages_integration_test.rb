@@ -4,7 +4,7 @@ class MessagesIntegrationTest < ActionDispatch::IntegrationTest
   test 'post message' do
     message = sample_string
     visit '/people'
-    first('span').click_link('view')
+    first('li a').click
     page.has_content? 'People / '
     fill_in('message_body', with: message)
     click_on 'Post'

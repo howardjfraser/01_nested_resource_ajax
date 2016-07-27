@@ -1,21 +1,18 @@
+<% provide :button, link_to("New <span class='hidden-xs-down'>Person</span>".html_safe, new_person_path, class: 'btn btn-success pull-xs-right') %>
 <% provide :nav, "#{link_to 'Derailed 00', root_path}".html_safe %>
 <% provide :title, 'People' %>
 
-<div class="row">
-  <div class="col-xs-6 col-sm-7 ">
-    <input type="text" name="name" value="", placeholder="Filter&hellip;">
-  </div>
-  <div class="col-xs-6 col-sm-5 m-b-1">
-    <%= link_to("New <span class='hidden-xs-down'>Person</span>".html_safe, new_person_path, class: 'btn btn-success btn-block') %>
-  </div>
-</div>
+<div id="people">
 
-<div class="people">
-  <% @people.each do |p| %>
-    <span class="p-r-1 nowrap">
-      <%= p.name %>
-      <%= link_to 'view', p %>
-    </span>
-    <br class="hidden-sm-up">
-  <% end %>
+  <input type="text" class="search" placeholder="Filter&hellip;" autofocus="true" />
+
+  <ul class="list list-unstyled">
+    <% @people.each do |p| %>
+      <li class="p-r-1 p-b-q">
+        <span class="name nowrap">
+          <%= link_to "#{p.name}", p %>
+        </span>
+      </li>
+    <% end %>
+  </ul>
 </div>

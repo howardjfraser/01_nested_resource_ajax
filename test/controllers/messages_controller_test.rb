@@ -9,7 +9,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     get person_messages_path @person
     assert_response :redirect
     follow_redirect!
-    assert_select 'h1', "#{@person.name}"
+    assert_select 'h1', @person.name
   end
 
   test 'valid create' do

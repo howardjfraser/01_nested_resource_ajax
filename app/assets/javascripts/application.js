@@ -16,9 +16,17 @@
 //= require_tree .
 
 document.addEventListener("turbolinks:load", function() {
+
+  // dismiss flash
   $('body').on('click', '.flash', function(e) {
     e.preventDefault();
     // TODO: use CSS animation?
     $(this).fadeToggle('fast');
   });
+
+  // people filter
+  var options = {
+    valueNames: [ 'name' ]
+  };
+  var userList = new List('people', options);
 })
