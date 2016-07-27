@@ -58,11 +58,6 @@ textarea {
   letter-spacing: 0.05em;
 }
 
-.btn-secondary {
-  // color, background, border
-  @include button-variant(darken($brand-success, 10%), lighten(#98FB98, 15%), lighten($brand-success, 10%))
-}
-
 button {
   @extend .btn;
   @extend .btn-success;
