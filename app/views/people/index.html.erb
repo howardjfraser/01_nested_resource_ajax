@@ -1,10 +1,11 @@
 <% provide :button, link_to("New <span class='hidden-xs-down'>Person</span>".html_safe, new_person_path, class: 'btn btn-success pull-xs-right') %>
-<% provide :nav, "#{link_to 'Derailed 01', root_path}".html_safe %>
+<% provide :nav, "#{link_to derailed_number, root_path}".html_safe %>
 <% provide :title, 'People' %>
 
 <div id="people">
 
-  <input type="text" class="search" placeholder="Filter&hellip;" autofocus="true" />
+  <label for="filter" class="sr-only">Filter</label>
+  <input id="filter" type="text" class="search" placeholder="Filter&hellip;" autofocus="true" autocomplete="off"/>
 
   <ul class="list list-unstyled">
     <% @people.each do |p| %>

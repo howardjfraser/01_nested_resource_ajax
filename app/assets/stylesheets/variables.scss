@@ -2,12 +2,13 @@ $font-family-sans-serif: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Rob
 
 $border-width: 3px;
 
-// $brand-success: #93c54b;
-// $brand-primary: #29abe0;
-// $brand-info:    #325d88;
-// $brand-danger:  #d9534f;
-// $brand-warning: #f47c3c;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 375px,
+  md: 576px,
+) !default;
 
-// $grid-breakpoints: (
-//   sm: 375px,
-// )
+$container-max-widths: (
+  sm: 576px,
+  md: 640px,
+) !default;

@@ -21,3 +21,6 @@ module Base
     end
   end
 end
+
+APP_NUMBER = '01'.freeze
+APP_NAME = 'Nested Resource'.freeze
