@@ -8,7 +8,7 @@ class PeopleIntegrationTest < ActionDispatch::IntegrationTest
 
     visit '/people'
     page.has_content? 'People'
-    click_on 'New Person'
+    click_on 'Add New'
     page.has_content? 'People / New'
     fill_in('Name', with: new_name)
     fill_in('Job title', with: new_job_title)
