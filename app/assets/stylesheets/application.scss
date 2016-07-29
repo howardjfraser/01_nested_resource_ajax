@@ -55,10 +55,15 @@ button {
 
 .flash {
   @extend .alert;
+  @extend .m-x-auto;
   @include alert-variant(#ffc, #eee, $text-muted);
   text-align: center;
   padding: 0.5em 0.25em;
   cursor: pointer;
+  position: relative;
+  top: -5.75em;
+  margin-bottom: -2.875em;
+  width: 90%;
 }
 
 ul, ol {
@@ -78,7 +83,7 @@ html {
 }
 
 header {
-  background-color: #eee;
+  background-color: aliceblue;
 }
 
 body {
