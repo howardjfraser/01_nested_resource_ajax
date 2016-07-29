@@ -2,7 +2,7 @@ class Person < ApplicationRecord
   has_many :messages, -> { order 'created_at desc' }, dependent: :destroy
 
   validates :name, :job_title, presence: true, length: { maximum: 48 }
-  validates :bio, presence: true, length: { maximum: 96 }
+  validates :bio, presence: true, length: { maximum: 256 }
 
   scope :sorted, -> { order('lower(name)') }
 
