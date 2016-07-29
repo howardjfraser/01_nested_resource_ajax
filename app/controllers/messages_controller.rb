@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
   before_action :find_person
 
-  # handle manual refresh after validation fail
   def index
     @messages = @person.messages.all
   end
