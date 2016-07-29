@@ -1,5 +1,5 @@
 <% provide :button, link_to("New <span class='hidden-xs-down'>Person</span>".html_safe, new_person_path, class: 'btn btn-success pull-xs-right') %>
-<% provide :nav, "#{link_to derailed_number, root_path}".html_safe %>
+<% provide :nav, breadcrumbs([link_to(derailed_number, root_path)]) %>
 <% provide :title, 'People' %>
 
 <div id="people">
@@ -13,6 +13,7 @@
         <span class="name nowrap">
           <%= link_to "#{p.name}", p %>
         </span>
+        <span class="text-muted"><%= p.messages.count %></span>
       </li>
     <% end %>
   </ul>

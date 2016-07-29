@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 
   # handle manual refresh after validation fail
   def index
-    redirect_to @person
+    @messages = @person.messages.all
   end
 
   def create

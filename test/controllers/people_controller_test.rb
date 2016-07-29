@@ -9,18 +9,28 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     get people_path
     assert_response :success
     assert_select 'h1', 'People'
+    assert_select 'nav', 'Derailed 01'
   end
 
   test 'get show' do
     get person_path @person
     assert_response :success
     assert_select 'h1', @person.name
+    assert_select 'nav', 'Derailed 01 / People'
+    assert_select 'a[href=?]', person_messages_path(@person), count: 0
+  end
+
+  test 'get show with > 3 messages' do
+    @michael = people(:michael)
+    get person_path @michael
+    assert_select 'a[href=?]', person_messages_path(@michael), count: 1
   end
 
   test 'get new' do
     get new_person_path
     assert_response :success
     assert_select 'h1', 'New'
+    assert_select 'nav', 'Derailed 01 / People'
   end
 
   test 'valid create' do
@@ -45,6 +55,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     get edit_person_path @person
     assert_response :success
     assert_select 'h1', 'Edit'
+    assert_select 'nav', 'Derailed 01 / People'
   end
 
   test 'valid update' do

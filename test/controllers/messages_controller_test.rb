@@ -5,11 +5,12 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     @person = people(:david)
   end
 
-  test 'manual refresh after validation fail redirects to people/show' do
+  test 'index' do
     get person_messages_path @person
-    assert_response :redirect
-    follow_redirect!
-    assert_select 'h1', @person.name
+    assert_response :success
+    assert_select 'h1', 'Messages'
+    assert_select 'div', @person.messages.last.body
+    assert_select 'nav', "Derailed 01 / People / #{@person.name}"
   end
 
   test 'valid create' do
