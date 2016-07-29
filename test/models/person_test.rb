@@ -33,9 +33,16 @@ class PersonTest < ActiveSupport::TestCase
     refute @person.valid?
   end
 
-  test 'bio is optional' do
+  test 'bio is required' do
     @person.bio = nil
+    refute @person.valid?
+  end
+
+  test 'bio should be 96 chars or less' do
+    @person.bio = 'a' * 96
     assert @person.valid?
+    @person.bio = 'a' * 97
+    refute @person.valid?
   end
 
   test 'first name' do
