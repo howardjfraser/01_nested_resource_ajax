@@ -38,10 +38,10 @@ class PersonTest < ActiveSupport::TestCase
     refute @person.valid?
   end
 
-  test 'bio should be 256 chars or less' do
-    @person.bio = 'a' * 256
+  test 'bio should be 512 chars or less' do
+    @person.bio = 'a' * 512
     assert @person.valid?
-    @person.bio = 'a' * 257
+    @person.bio = 'a' * 513
     refute @person.valid?
   end
 
