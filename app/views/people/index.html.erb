@@ -8,13 +8,6 @@
   <input id="filter" type="text" class="search" placeholder="Filter&hellip;" autofocus="true" autocomplete="off"/>
 
   <ul class="list list-unstyled">
-    <% @people.each do |p| %>
-      <li class="p-r-1 p-b-q">
-        <span class="name nowrap">
-          <%= link_to "#{p.name}", p %>
-        </span>
-        <span class="text-muted"><%= p.messages.count %></span>
-      </li>
-    <% end %>
+    <%= render @people %>
   </ul>
 </div>

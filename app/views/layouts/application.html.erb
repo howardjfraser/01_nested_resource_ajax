@@ -1,51 +1,20 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <title><%= title %></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= render partial: 'layouts/head' %>
 
   <body>
 
-    <header>
-      <nav class="container p-t-1 p-b-q">
-        <%= yield :nav %>
-      </nav>
-      <div class="container">
-        <%= yield :button %>
-        <h1 class="m-b-1">
-          <%= yield :title %>
-        </h1>
-      </div>
-    </header>
+    <%= render partial: 'layouts/header' %>
 
     <div class="container p-y-1">
-      <% if flash[:notice] %>
-        <div class="flash">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
+
+      <%= render partial: 'layouts/flash' %>
       <%= yield %>
+
     </div>
 
-    <footer>
-      <div class="container m-t-2">
-        <div class="small pull-xs-right">
-          <span class="hidden-sm-up">xs</span>
-          <span class="hidden-xs-down hidden-md-up">sm</span>
-          <span class="hidden-sm-down hidden-lg-up">md</span>
-        </div>
-        <div class="small">
-          &copy; Derailed 2016
-        </div>
-      </div>
-    </footer>
+    <%= render partial: 'layouts/footer' %>
 
   </body>
 
