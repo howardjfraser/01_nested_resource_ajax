@@ -56,7 +56,7 @@ button {
 .flash {
   @extend .alert;
   @extend .m-x-auto;
-  @include alert-variant(#ffc, #eee, $text-muted);
+  @include alert-variant(#ffc, #ddd, $text-muted);
   text-align: center;
   padding: 0.5em 0.25em;
   cursor: pointer;
@@ -65,7 +65,7 @@ button {
   margin-bottom: -2.875em;
   width: 90%;
   opacity: 0;
-  animation: fade 10s ease-in-out;
+  animation: fade 6s ease-in-out;
 }
 
 ul, ol {
@@ -85,7 +85,7 @@ html {
 }
 
 header {
-  background-color: aliceblue;
+  background-color: #eee;
 }
 
 body {
