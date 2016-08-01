@@ -64,6 +64,8 @@ button {
   top: -5.75em;
   margin-bottom: -2.875em;
   width: 90%;
+  opacity: 0;
+  animation: fade 6s ease-in-out;
 }
 
 ul, ol {
@@ -117,4 +119,11 @@ ul, ol {
 
 li {
   padding-bottom: 0.25em;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    4% { opacity: 1; }
+   92% { opacity: 1; }
+  100% { opacity: 0; }
 }
