@@ -128,3 +128,13 @@ li {
   95% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+.splash {
+  @extend .alert;
+  @extend .m-x-auto;
+  @include alert-variant(#ffc, #ddd, $text-muted);
+  margin-top: 3em;
+  padding: 0.5em 1em;
+  max-width: 28em;
+  transform: rotate(-2deg);
+}
