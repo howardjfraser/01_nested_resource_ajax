@@ -1,18 +1,14 @@
 module ApplicationHelper
-  def derailed_number
+  def app_number
     "Derailed #{APP_NUMBER}"
   end
 
+  def app_name
+    APP_NAME
+  end
+
   def title
-    "#{derailed_number} #{APP_NAME}"
-  end
-
-  def breadcrumbs(elements)
-    safe_join elements, separator
-  end
-
-  def separator
-    content_tag :span, ' / ', class: 'text-muted'
+    "#{app_number} #{app_name}"
   end
 
   def label_or_error(form_builder, field)

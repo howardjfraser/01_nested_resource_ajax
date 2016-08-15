@@ -22,11 +22,6 @@ strong,
   margin-bottom: 0.5em;
 }
 
-label {
-  @extend .text-muted;
-  font-weight: 500;
-}
-
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -61,11 +56,11 @@ button {
   padding: 0.5em 0.25em;
   cursor: pointer;
   position: relative;
-  top: -5.75em;
+  top: -4.75em;
   margin-bottom: -2.875em;
   width: 90%;
   opacity: 0;
-  animation: fade 6s ease-in-out;
+  animation: fade 4s ease-in-out;
 }
 
 ul, ol {
