@@ -10,7 +10,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'h1', 'Messages'
     assert_select 'div', @person.messages.last.body
-    assert_select 'nav', "About People"
+    assert_select 'nav', 'About People'
   end
 
   test 'valid create' do
