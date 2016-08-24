@@ -23,4 +23,4 @@ module Base
 end
 
 APP_NUMBER = '01'.freeze
-APP_NAME = 'Nested Resource'.freeze
+APP_NAME = 'Nested Resource AJAX'.freeze
