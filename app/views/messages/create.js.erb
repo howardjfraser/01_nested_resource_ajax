@@ -1,0 +1,6 @@
+<% if @message.valid? %>
+  $('#latest-messages').prepend("<%= j render partial: @message, locals: { new_message: 'new-message' } %>");
+  $('#message_body').val('').focus();
+<% else %>
+  alert('Message is not valid, please try again');
+<% end %>

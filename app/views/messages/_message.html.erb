@@ -1,5 +1,5 @@
 <% unless message.new_record? %>
-  <div class="message m-b-1">
+  <div class="message m-b-1 <%= "#{new_message ||= ''}" %>">
     <div class="p-b-q">
       <%= message.body %>
     </div>

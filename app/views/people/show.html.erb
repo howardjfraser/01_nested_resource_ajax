@@ -1,3 +1,4 @@
+
 <% provide :title, @person.name %>
 
 <div class="row">
@@ -26,7 +27,7 @@
     <hr class="hidden-sm-up m-y-2">
     <h5>Messages</h5>
 
-    <%= form_for [@person, @message] do |f| %>
+    <%= form_for [@person, @message], remote: true, authenticity_token: true do |f| %>
 
       <%= empty_or_error f, @message, :body %>
       <%= f.text_area :body, rows: 2, placeholder: "Leave a message for #{@person.first_name}&hellip;".html_safe %>
@@ -34,7 +35,9 @@
       <%= f.button "Post", class: 'btn-block m-b-2' %>
     <% end %>
 
-    <%= render @person.messages.most_recent(6) %>
+    <div id="latest-messages">
+      <%= render @person.messages.most_recent(6) %>
+    </div>
     <%= all_messages(6)  %>
 
   </div>

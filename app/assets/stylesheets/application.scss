@@ -134,3 +134,12 @@ li {
   max-width: 28em;
   transform: rotate(-2deg);
 }
+
+.new-message {
+  animation: highlight 1.5s ease-out;
+}
+
+@keyframes highlight {
+  0% { background-color: #ffc }
+  100% { background-color: #fff }
+}
