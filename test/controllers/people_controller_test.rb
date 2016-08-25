@@ -20,7 +20,7 @@ class PeopleControllerTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', person_messages_path(@person), count: 0
   end
 
-  test 'get show with > 3 messages' do
+  test 'get show with > 6 messages' do
     @michael = people(:michael)
     get person_path @michael
     assert_select 'a[href=?]', person_messages_path(@michael), count: 1
