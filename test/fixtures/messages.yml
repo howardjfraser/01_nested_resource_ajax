@@ -13,7 +13,7 @@ david_three:
   person: david
   created_at: <%= 1.hours.ago %>
 
-<% 4.times do |n| %>
+<% 7.times do |n| %>
 michael_<%= n %>:
   body: <%= FFaker::Lorem.sentence %>
   person: michael

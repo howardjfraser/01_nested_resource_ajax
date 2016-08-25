@@ -34,9 +34,8 @@
       <%= f.button "Post", class: 'btn-block m-b-2' %>
     <% end %>
 
-    <%= render @person.messages.most_recent %>
-
-    <%= more  %>
+    <%= render @person.messages.most_recent(6) %>
+    <%= all_messages(6)  %>
 
   </div>
 </div>
