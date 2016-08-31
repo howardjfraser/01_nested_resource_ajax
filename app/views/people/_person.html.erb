@@ -1,3 +1,4 @@
 <li class="p-r-1 p-b-q nowrap d-inline-block">
   <%= link_to "#{person.name}", person %>
+  <span class="text-muted small"><%= pluralize person.messages.length, 'message' %></span>
 </li>

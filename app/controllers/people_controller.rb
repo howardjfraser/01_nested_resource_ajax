@@ -2,7 +2,7 @@ class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   def index
-    @people = Person.all.sorted
+    @people = Person.includes(:messages).sorted
   end
 
   def show
